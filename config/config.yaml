@@ -184,7 +184,7 @@ success-rate: 0
 # 2) YAML/JSON：字符串数组 ["https://...", "https://..."]
 # 支持时间占位符与 github-proxy，例如包含 {Ymd}、{Y-m-d}
 sub-urls-remote:
-  - "https://gist.githubusercontent.com/greatcoolge/08b7ee0c3f6b6075c38b75daf0d4b11d/raw/clash2.yaml"
+  # - "https://gist.githubusercontent.com/greatcoolge/08b7ee0c3f6b6075c38b75daf0d4b11d/raw/clash2.yaml"
   # - https://example.com/sub-list.yaml
   # - https://raw.githubusercontent.com/beck-8/sub-urls/main/%E5%B0%8F%E8%80%8C%E7%BE%8E.txt
 
@@ -193,6 +193,6 @@ sub-urls-remote:
 # github 链接可自己添加ghproxy使用；订阅链接支持 HTTP_PROXY HTTPS_PROXY 环境变量加速拉取
 # 如果用户想区分节点来源，可在订阅链接结尾加上 #备注 ，备注字段会自动加到节点命名结尾
 sub-urls:
-  # - https://example.com/sub.txt
+  - "https://gist.githubusercontent.com/greatcoolge/08b7ee0c3f6b6075c38b75daf0d4b11d/raw/clash2.yaml"
   # - https://example.com/sub2.txt
   # - https://example.com/sub?token=43fa8f0dc9bb00dcfec2afb21b14378a
