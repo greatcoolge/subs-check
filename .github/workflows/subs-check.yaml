@@ -20,7 +20,7 @@ jobs:
       - name: Run Speed Test
         run: |
           # 配置输出目录
-          mkdir -p output
+          mkdir -p /tmp/subs-check-output
           # 运行测速
           go run . -f ./config/config.yaml
 
@@ -28,4 +28,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: speed-test-results
-          path: output/
+          path: /tmp/subs-check-output/
