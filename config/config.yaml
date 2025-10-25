@@ -23,11 +23,12 @@ success-limit: 0
 timeout: 5000
 # 延迟测试URL
 # 一些高级用法需要自己摸索，比如想要拒绝某些CF类节点，可将url替换为https://www.cloudflare.com
-alive-test-url: http://gstatic.com/generate_204
+alive-test-url: http://www.msftconnecttest.com/connecttest.txt
 # 测速地址(注意 并发数*节点速度<最大网速 否则测速结果不准确)
 # 尽量不要使用Speedtest，Cloudflare提供的下载链接，因为很多节点屏蔽测速网站
 # 如果找不到稳定的测速地址，可以自建测速地址
-speed-test-url: https://github.com/AaronFeng753/Waifu2x-Extension-GUI/releases/download/v2.21.12/Waifu2x-Extension-GUI-v2.21.12-Portable.7z
+speed-test-url: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js
+# speed-test-url: https://github.com/AaronFeng753/Waifu2x-Extension-GUI/releases/download/v2.21.12/Waifu2x-Extension-GUI-v2.21.12-Portable.7z
 # 最低测速结果舍弃(KB/s)
 min-speed: 512
 # 下载测试时间(s)(与下载链接大小相关，默认最大测试10s)
@@ -183,7 +184,7 @@ success-rate: 0
 # 2) YAML/JSON：字符串数组 ["https://...", "https://..."]
 # 支持时间占位符与 github-proxy，例如包含 {Ymd}、{Y-m-d}
 sub-urls-remote:
-  # - https://example.com/sub-list.txt
+  - "https://gist.githubusercontent.com/greatcoolge/08b7ee0c3f6b6075c38b75daf0d4b11d/raw/clash2.yaml"
   # - https://example.com/sub-list.yaml
   # - https://raw.githubusercontent.com/beck-8/sub-urls/main/%E5%B0%8F%E8%80%8C%E7%BE%8E.txt
 
