@@ -33,13 +33,7 @@ jobs:
         run: |
           mkdir -p logs
           echo "🚀 Starting subs-check..."
-          go run . -f ./config/config.yaml | tee logs/run.log
-
-      - name: Upload logs
-        uses: actions/upload-artifact@v4
-        with:
-          name: subs-check-logs
-          path: logs/run.log
+          go run . -f ./config/config.yaml
 
       - name: Commit & Push results (if any generated files)
         run: |
