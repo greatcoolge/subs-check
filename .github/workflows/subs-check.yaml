@@ -25,7 +25,7 @@ jobs:
           go run . -f ./config/config.yaml
 
       - name: Upload Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: speed-test-results
           path: output/
