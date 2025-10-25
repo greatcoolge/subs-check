@@ -23,12 +23,12 @@ success-limit: 0
 timeout: 5000
 # 延迟测试URL
 # 一些高级用法需要自己摸索，比如想要拒绝某些CF类节点，可将url替换为https://www.cloudflare.com
-alive-test-url: http://www.msftconnecttest.com/connecttest.txt
+alive-test-url: https://www.google-analytics.com/generate_204
 # 测速地址(注意 并发数*节点速度<最大网速 否则测速结果不准确)
 # 尽量不要使用Speedtest，Cloudflare提供的下载链接，因为很多节点屏蔽测速网站
 # 如果找不到稳定的测速地址，可以自建测速地址
-speed-test-url: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js
-# speed-test-url: https://github.com/AaronFeng753/Waifu2x-Extension-GUI/releases/download/v2.21.12/Waifu2x-Extension-GUI-v2.21.12-Portable.7z
+# speed-test-url: https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js
+speed-test-url: https://github.com/AaronFeng753/Waifu2x-Extension-GUI/releases/download/v2.21.12/Waifu2x-Extension-GUI-v2.21.12-Portable.7z
 # 最低测速结果舍弃(KB/s)
 min-speed: 512
 # 下载测试时间(s)(与下载链接大小相关，默认最大测试10s)
