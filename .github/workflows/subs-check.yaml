@@ -1,44 +1,31 @@
-name: subs-check
+name: Speed Test
 
 on:
   schedule:
-    - cron: "0 */6 * * *"  # 每6小时运行一次
-  workflow_dispatch:       # 手动触发
-
-permissions:
-  contents: write
-
-env:
-  TZ: Asia/Shanghai        # 设置时区
-  GO111MODULE: on
+    - cron: '0 */2 * * *'  # 每2小时运行一次
+  workflow_dispatch:       # 支持手动触发
 
 jobs:
-  run-subs-check:
+  speed-test:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v3
 
-      - name: Setup Go environment
-        uses: actions/setup-go@v5
+      - name: Setup Go
+        uses: actions/setup-go@v4
         with:
-          go-version: "1.23"   # 确保与项目兼容的 Go 版本
+          go-version: stable
 
-      - name: Install dependencies
+      - name: Run Speed Test
         run: |
-          go mod tidy
-
-      - name: Run subs-check
-        run: |
-          mkdir -p logs
-          echo "🚀 Starting subs-check..."
+          # 配置输出目录
+          mkdir -p output
+          # 运行测速
           go run . -f ./config/config.yaml
 
-      - name: Commit & Push results (if any generated files)
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git diff --cached --quiet || git commit -m "🤖 Update subs-check results"
-          git push
+      - name: Upload Results
+        uses: actions/upload-artifact@v3
+        with:
+          name: speed-test-results
+          path: output/
